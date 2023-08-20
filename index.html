@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="main">
+      <form class="fom">
+        <h2 class="margn" >Registration</h2>
+        <label for="name">Name</label><br />
+        <input type="text" id="name" name="name" required /><br />
+
+        <label for="email">Email</label><br />
+        <input type="email" id="email" name="email" required /><br />
+
+        <label for="password">Password</label><br />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$"
+          title="Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, one digit, and one special symbol (!@#$%^&*)"
+          required
+        /><br />
+
+        <label for="contact">Contact</label><br />
+        <input type="tel" id="contact" name="contact" required /><br />
+
+        <label for="avatar">Upload Picture </label><br />
+        <input
+          type="file"
+          id="avatar"
+          name="avatar"
+          accept=".png, .jpg"
+          max-size="1048576"
+        /><br />
+
+        <label class="margn">Gender</label><br />
+        <input type="radio" id="male" name="gender" value="male" />
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other" />
+        <label for="other">Other</label><br />
+
+        <label for="dob" class="margn">Date of Birth</label><br />
+        <input
+          type="date"
+          id="dob"
+          name="dob"
+          max="2023-08-20"
+          min="2000-08-20"
+        /><br />
+
+        <button id="sub">Submit</button>
+      </form>
+    </div>
+
+    <script type="text/javascript" src="vanila.js"></script>
+    <script>
+      VanillaTilt.init(document.querySelector(".fom"), {
+        max: 10,
+        speed: 400,
+      });
+    </script>
+  </body>
+</html>
